@@ -1,31 +1,45 @@
 Smart City Energy Performance Dashboard ⚡📊
 
-  An end-to-end data intelligence project that transforms raw energy metrics into actionable business insights. This project covers the entire data lifecycle: from SQL database architecture to a bespoke Power BI interface.
+  This project analyzes energy production and consumption in a Smart City district. The goal was to understand how much of the energy demand can be covered by local solar generation and where the district still depends on the external power grid.The project covers the full workflow: from data in a SQL database to building an interactive Power BI dashboard for analysis.
 
-🎯 Business Case
+Business Goal
 
-  The primary goal was to quantify the "Self-Sufficiency Gap" in a Smart City district. Despite significant solar generation, the analysis reveals a 76% reliance on the external grid during evening peaks.
-
-  Outcome: The dashboard provides a data-driven ROI justification for investing in Battery Energy Storage Systems (BESS) to capture wasted daytime surplus (currently 24% of production).
-
+  The main objective was to evaluate the self-sufficiency of the district's energy system.
+Even though the area produces a good amount of solar energy during the day, the analysis shows that the district still relies heavily on the grid during the evening hours.Key finding:
+  About 76% of energy demand during peak hours is covered by the external grid.
+  This indicates that storing excess solar energy during the day (for example with battery systems) could significantly reduce grid dependency.
+  
 🖼️ Dashboard Preview
 
 ![Dashboard Mockup](assets/image.png)
 
-🛠 Tech Stack & Workflow
+Tech Stack
 
-  Data Engineering (SQL): Designed a relational schema to handle high-frequency time-series records. Developed ETL scripts for data cleaning and transformation.
+  SQL / PostgreSQL – data storage and transformations
+  Power BI – dashboard creation and data visualization
+  DAX – calculations and performance metrics
+  
+Data Workflow
 
-🏗 Data Architecture
+Raw smart meter data → PostgreSQL database → SQL data transformations → Aggregated dataset → Power BI dashboard
 
-  Raw smart meter data → PostgreSQL → SQL transformations → Aggregated dataset → Power BI dashboard
+What I Did
 
-Analytics (DAX): Created complex measures to  calculated dynamic measures in Power BI to evaluate Self-Sufficiency (19%) and Weighted Average Energy Cost
+Designed a simple relational structure to store smart meter data
+Used SQL queries to clean and prepare the dataset
+Built a Power BI dashboard to visualize production and consumption
+Created DAX measures to calculate key indicators such as energy self-sufficiency and average energy cost
 
-📈 Key Insights
+Key Insights
 
-  Low Autonomy: Only 19% of demand is covered by local production.
+Low energy autonomy
+Only about 19% of total energy demand is covered by local solar production.
+Evening peak dependency
+The district relies most on the external grid between 18:00 and 21:00.
+Unused solar potential
+Around 24% of solar production is not used locally, which suggests that energy storage could improve efficiency.
 
-  Peak Stress: Critical grid dependency identified between 18:00 and 21:00.
+Possible Improvements
 
-  Efficiency Opportunity: High potential for cost reduction through smart load shifting.
+Simulate the impact of Battery Energy Storage Systems (BESS)
+Add forecasting for energy demand
