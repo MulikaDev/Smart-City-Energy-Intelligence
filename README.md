@@ -1,45 +1,40 @@
-Smart City Energy Performance Dashboard ⚡📊
+Smart City Energy Intelligence: From SQL to Power BI
 
-  This project analyzes energy production and consumption in a Smart City district. The goal was to understand how much of the energy demand can be covered by local solar generation and where the district still depends on the external power grid.The project covers the full workflow: from data in a SQL database to building an interactive Power BI dashboard for analysis.
+I built this project to answer a critical urban question: How self-sufficient is a modern "Smart City" district when it comes to energy? Using a mix of SQL and Power BI, I tracked the tension between local solar generation and the external power grid to find where the system actually fails.
 
-Business Goal
 
-  The main objective was to evaluate the self-sufficiency of the district's energy system.
-Even though the area produces a good amount of solar energy during the day, the analysis shows that the district still relies heavily on the grid during the evening hours.Key finding:
-  About 76% of energy demand during peak hours is covered by the external grid.
-  This indicates that storing excess solar energy during the day (for example with battery systems) could significantly reduce grid dependency.
-  
-🖼️ Dashboard Preview
+What I Built (The Tech Stack)
+
+Database: PostgreSQL (raw smart meter data ingestion & cleaning).
+
+Analytics: SQL for data transformations and aggregating time-series data.
+
+BI & Viz: Power BI + DAX for calculating energy autonomy and peak-hour dependency.
+
+
+The Problem & The Solution
+
+The district produces significant solar energy, but it wasn't clear why it still leaned so heavily on the grid. I designed a pipeline that takes raw meter readings, cleans them via SQL, and visualizes the energy flow.
+
+The main takeaway? Despite the solar panels, the district is only 19% autonomous. The real bottleneck isn't a lack of sun—it's the timing.
 
 ![Dashboard Mockup](assets/image.png)
 
-Tech Stack
 
-  SQL / PostgreSQL – data storage and transformations
-  Power BI – dashboard creation and data visualization
-  DAX – calculations and performance metrics
-  
-Data Workflow
+Key Engineering Insights
 
-Raw smart meter data → PostgreSQL database → SQL data transformations → Aggregated dataset → Power BI dashboard
+The 18:00–21:00 Gap: 76% of energy during these hours comes from the external grid.
 
-What I Did
+Wasted Energy: About 24% of generated solar power is exported back to the grid because there's no way to store it locally during the day.
 
-Designed a simple relational structure to store smart meter data
-Used SQL queries to clean and prepare the dataset
-Built a Power BI dashboard to visualize production and consumption
-Created DAX measures to calculate key indicators such as energy self-sufficiency and average energy cost
+The Strategy: My analysis proves that implementing BESS (Battery Energy Storage Systems) is the only way to significantly move the needle on grid independence.
 
-Key Insights
 
-Low energy autonomy
-Only about 19% of total energy demand is covered by local solar production.
-Evening peak dependency
-The district relies most on the external grid between 18:00 and 21:00.
-Unused solar potential
-Around 24% of solar production is not used locally, which suggests that energy storage could improve efficiency.
+Future Roadmap
 
-Possible Improvements
+Integrate Predictive Modeling to forecast demand spikes.
 
-Simulate the impact of Battery Energy Storage Systems (BESS)
-Add forecasting for energy demand
+Simulate different battery capacities to find the ROI for the city council.
+
+![Dashboard Mockup](assets/image.png)
+
