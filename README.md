@@ -36,5 +36,5 @@ Integrate Predictive Modeling to forecast demand spikes.
 
 Simulate different battery capacities to find the ROI for the city council.
 
-![Dashboard Mockup](assets/image.png)
+
 
